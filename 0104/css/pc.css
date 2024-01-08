@@ -1,0 +1,136 @@
+@charset "utf-8";
+
+/* PC해상도일때 적용되는 서식 */
+
+@media screen and (min-width:1200px) {
+    header{
+        width: 100%;
+        height: 150px;
+        position: absolute;
+        z-index: 1000;
+    }
+    header h1{
+        width: 270px;
+        position: absolute;
+        top: 40px;
+        left: 3%;
+    }
+    header h1 img{
+        width: 100%;
+    }
+    #toggle{
+        display: none;
+    }
+    .gnb{
+        position: absolute;
+        right: 3%;
+        top: 40px;
+    }
+    .gnb > ul{
+        display: flex;
+    }
+    .gnb > ul > li{
+        margin: 0 20px;
+        position: relative;
+        line-height: 40px;
+    }
+    .gnb > ul > li > a{
+        font-size: 1.2rem;
+        color: #fff;
+    }
+
+    /* 메인서식 */
+    main{
+
+    }
+    .visual{
+        position: relative;
+        height: 68vh; /* viewport height */
+        overflow: hidden;
+    }
+    .visual > h2{
+        display: none;
+    }
+    .visual div{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+    .visual div img{
+        width: 100%;
+        display: block;
+    }
+    .visual div > span{
+        position: absolute;
+        font-size: 40px;
+        color: #fff;
+        text-shadow: 0px 0px 4px #ccc;
+        font-weight: bold;
+        line-height: 50px;
+        top: 280px;
+        left: 3%;
+    }
+    .slide1{
+        z-index: 30;
+    }
+    .slide2{
+        z-index: 20;
+    }
+    .slide3{
+        z-index: 10;
+    }
+    .sns{
+        display: flex;
+        position: absolute;
+        left: 3%;
+        top: 420px;
+        z-index: 40;
+    }
+    .sns > li{
+        border: 2px solid #fff;
+        margin: 0px 8px;
+        padding: 8px 10px;
+    }
+    .sns > li .fab{
+        color: #fff;
+        font-size: 20px;
+        width: 20px;
+        text-align: center;
+    }
+    .sns > li:hover{
+        background-color: #fff;
+    }
+    .sns > li:hover .fab{
+        color: #ff8900;
+    }
+    .s_btn{
+        display: flex;
+        position: absolute;
+        left: 3%;
+        top: 80%;
+        z-index: 50;
+      }
+      .s_btn > li{
+        background-color: #f2f2f2;
+        padding: 12px 6px;
+        margin-right: 10px;
+      }
+      .ctrl_btn{
+        position: absolute;
+        right: 5%;
+        top: 45%;
+        z-index: 60;
+      }
+      .ctrl_btn li{
+        width: 15px;
+        height: 15px;
+        background: #fff;
+        border-radius: 50%;
+        margin-bottom: 10px;
+        cursor: pointer;
+      }
+      .on{
+        background-color: #ff8900 !important;
+      }
+}
