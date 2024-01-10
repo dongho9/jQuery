@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01_애니메이트 메서드 복습하기</title>
+    <style>
+        .box{
+            width: 478px;
+            height: 278px;
+            margin: 0 auto;
+            border: 3px solid #333;
+            position: relative;
+            /* overflow: hidden; */
+        }
+        .title, .face{
+            position: absolute;
+            opacity: 0;
+        }
+        .title{
+            top: 60px;
+            left: -140px;
+        }
+        .face{
+            bottom: -300px;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <h2>01_애니메이트 메서드 복습하기</h2>
+    <article class="box">
+        <h3 class="title"><img src="images/jobs_text.gif" alt="스잡"></h3>
+        <img src="images/jobs.png" alt="스잡얼" class="face">
+    </article>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            const t = $('.title');
+            const f = $('.face');
+
+            t.animate({'left':'30px', 'opacity' : '1'},800);
+            f.delay(500).animate({'bottom':'0px', 'opacity' : '1'},800); //딜레이속성으로 늦추기가능
+        })
+    </script>
+</body>
+</html>
