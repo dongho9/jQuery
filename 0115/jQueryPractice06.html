@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습예제_제이쿼리 문서객체 내용추가메서드를 활용한 실시간 검색순위</title>
+    <style>
+        .box{
+            width: 350px;
+            background-color: #ccc;
+        }
+        .box_in{
+            padding: 20px;
+        }
+        .box_in > h3{
+            border-bottom: 2px solid #0f0;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+        .box_in > ul{
+            height: 150px;
+            border: 1px solid #f00;
+            list-style: none;
+        }
+        .box_in > ul > li > a{
+            display: block;
+            font-size: 13px;
+            line-height: 2rem;
+            text-decoration: none;
+            color: #333;
+        }
+        .box_in > ul > li:first-child a{
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 1.4em;
+        }
+        .box_in > ul > li:nth-child(2) a{
+            font-size: 16px;
+            margin-top: 4px;
+        }
+
+        .box2{
+            background-color: #ccc;
+            height: 50px;
+            margin-top: 50px;
+            width: 600px;
+            overflow: hidden;
+        }
+        .box_in2{
+            display: flex;
+        }
+        .box_in2 > p{
+            width: 15%;
+            font-size: 18px;
+            line-height: 1rem;
+        }
+        .box_in2 ul{
+            width: 85%;
+            list-style: none;
+        }
+        .box_in2 ul > li > a{
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+        }
+        .box_in2 ul > li:first-child a{
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 1rem;
+        }
+        .box_in2 ul > li:nth-child(2) a{
+            line-height: 2.5em;
+        }
+    </style>
+</head>
+<body>
+    <h2>실습예제_제이쿼리 문서객체 내용추가메서드를 활용한 실시간 검색순위</h2>
+
+    <div class="box">
+        <div class="box_in">
+            <h3>실시간 검색순위</h3>
+            <ul>
+                <li>
+                    <a href="#" title="키워드1">
+                        키워드1
+                    </a>
+                </li>
+                <li>
+                    <a href="#" title="키워드2">
+                        키워드2
+                    </a>
+                </li>
+                <li>
+                    <a href="#" title="키워드3">
+                        키워드3
+                    </a>
+                </li>
+                <li>
+                    <a href="#" title="키워드4">
+                        키워드4
+                    </a>
+                </li>
+                <li>
+                    <a href="#" title="키워드5">
+                        키워드5
+                    </a>
+                </li>
+                <li>
+                    <a href="#" title="키워드6">
+                        키워드6
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="box2">
+        <div class="box_in2">
+            <p>연합뉴스</p>
+            <ul>
+                <li>
+                    <a href="#" title="키워드1">
+                        다이어, 바이에른 뮌헨에 큰 도움이 될 선수 
+                    </a>
+                </li>
+                <li>
+                    <a href="#" title="키워드2">
+                        다이어, 바이에른 뮌헨에 큰 도움이 될 선수2
+                    </a>
+                </li>
+                <li>
+                    <a href="#" title="키워드3">
+                        다이어, 바이에른 뮌헨에 큰 도움이 될 선수3
+                    </a>
+                </li>
+                <li>
+                    <a href="#" title="키워드4">
+                        다이어, 바이에른 뮌헨에 큰 도움이 될 선수4
+                    </a>
+                </li>
+                <li>
+                    <a href="#" title="키워드5">
+                        다이어, 바이에른 뮌헨에 큰 도움이 될 선수5
+                    </a>
+                </li>
+                <li>
+                    <a href="#" title="키워드6">
+                        다이어, 바이에른 뮌헨에 큰 도움이 될 선수6
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            //시간객체
+            //setInterval(함수명, 반복할시간); - 일정시간 마다 함수나 내용을 반복 호출하여 실행.
+            //setTimeout(내용, 반복할시간); - 일정시간 지난 후 함수를 호출하여 한번 내용실행.
+            
+            setInterval(function(){
+                // console.log('내용반복출력');
+                
+                // 변수선언
+                let box_in = $('.box_in > ul'); //목록태그의 부모요소
+                let box_Row = $('.box_in > ul > li:first'); //boxRow 변수의 첫번째 li요소를 변수에 저장
+               
+                let area = ()=> {
+                    box_Row.appendTo(box_in).show(300);  //첫째 li태그를 ul태그의 마지막요소에 자리배치(위치변경)
+                };
+                box_Row.hide(300, area);
+                
+                
+            }, 3000);
+            
+            setInterval(function(){
+                let box_in2 = $('.box_in2 ul'); //목록태그의 부모요소
+                let box_Row2 = $('.box_in2 ul > li:first'); //boxRow 변수의 첫번째 li요소를 변수에 저장
+                
+                let area2 = ()=> {
+                    box_Row2.appendTo(box_in2).show(300);  //첫째 li태그를 ul태그의 마지막요소에 자리배치(위치변경)
+                };
+                box_Row2.hide(300, area2); //boxRow요소가 숨겨지고나면 area에 저장된 콜백함수가 실행됨.
+                
+            },3000);
+        });
+    </script>
+</body>
+</html>
