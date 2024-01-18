@@ -1,0 +1,115 @@
+@charset "utf-8";
+
+@media screen and (max-width : 767px){
+    header{
+        width: 100%;
+        position: absolute;
+        z-index: 1000;
+    }
+    header h1{
+        position: absolute;
+        top: 20px;
+        width: 250px;
+    }
+    header > h1 > a > img{
+        width: 100%;
+    }
+    /* 모바일 내비게이션 서식 */
+    header nav{
+        position: fixed;
+        top: 100px;
+        width: 100%;
+        height: 100%;
+        z-index: 1001;
+    }
+    .gnb{
+        width: 100%;
+        padding-top: 50px;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        display: none;
+        left: 5%;
+    }
+    .gnb > ul{
+        width: 90%;
+    }
+    .gnb > li{
+        text-align: center;
+        position: relative;
+    }
+    .gnb li a{
+        display: block;
+        background-color: #fff;
+        line-height: 260%;
+        font-size: 1rem;
+        text-align: center;
+        text-decoration: none;
+    }
+    .sub{
+        position: absolute;
+        width: 100%;
+        border: 1px solid #ccc;
+        display: none;
+        /* box-shadow: 0px 3px 2px #ccc; */
+    }
+    .sub li a{
+        background-color: #e8e8e8;
+        width: 90%;
+        left: 5%;
+    }
+
+
+    main h2, main h3, main span{
+        display: none;
+    }
+    #toggle{
+        display: flex;
+        border: 1px solid #fff;
+        background-color: rgba(108, 108, 108, 0.5);
+        padding: 8px;
+        top: 24px;
+        position: absolute;
+        right: 3%;
+        width: 32px;
+        height: 32px;
+        transition: 0.5s;
+    }
+
+    .bb{
+        border: 1px solid #ff8900 !important; 
+    }
+    #toggle span{
+        background-color: #fff;
+        display: inline-block;
+        width: 33px;
+        height: 2px;
+        position: absolute;
+    }
+    #toggle span:first-child{
+        top: 12px;
+    }
+    #toggle span:nth-child(2){
+        top: 23px;
+    }
+    #toggle span:last-child{
+        bottom: 12px;
+    }
+    .hide01{
+        opacity: 0;
+    }
+    .rotate1{
+        transform: rotate(45deg);
+        left: 8px;
+        top: 23px !important;
+    }
+    .rotate2{
+        transform: rotate(-45deg);
+        bottom: 23px !important;
+        right: 8px;
+    }
+    .tc{
+        background-color: #ff8900 !important;
+    }
+    
+}

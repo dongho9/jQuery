@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 문서객체조작_채팅앱 구현하기</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #wrap{
+            margin: 60px 0 0 100px;
+            width: 400px;
+            box-shadow: 0 2px 4px #ccc;
+        }
+        header{
+            background-color: #fff;
+            padding: 30px 8px 8px 8px;
+            position: relative;
+        }
+        header .btn{
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: none;
+            position: absolute;
+            top: 8px;
+        }
+        #close{
+            background-color: #f00;
+        }
+        #min{
+            background-color: #ff0;
+            left: 26px;
+        }
+        #max{
+            background-color: #0f0;
+            left: 44px;
+        }
+        #wrap img{
+            width: 80px;
+            border: 1px solid #ccc;
+            vertical-align: middle;
+        }
+        header span{
+            font-size: 14px;
+            font-weight: bold;
+            margin-left: 5px;
+            color: #343434;
+        }
+
+        /* 채팅창 영역서식 */
+        .chat_box{
+            height: 400px;
+            background-color: #d7e4f2;
+            padding: 10px;
+            position: relative;
+            overflow-y: scroll;
+        }
+        .chat_box > div{
+            margin: 5px 0px;
+            max-width: 300px;
+            font-size: 14px;
+            display: inline-block;
+            position: relative;
+        }
+        .bubble01{
+            background-color: #fff;
+            padding: 7px 15px 7px 15px;
+            border-radius: 14px 14px 14px 0;
+            float: left;
+            clear: both;
+        }
+        .bubble02{
+            background-color: #ff0;
+            padding: 7px 15px 7px 15px;
+            border-radius: 14px 14px 0 14px;
+            float: right;
+            clear: both;
+        }
+        .text_box{
+            background-color: #fff;
+            padding: 10px;
+            display: flex;
+        }
+        .text_box textarea{
+            width: calc(88% - 50px);
+            height: 60px;
+            border-radius: 2%;
+            border: 0.5px solid #d7d7d7;
+            background-color: #fff;
+            resize: none;
+            padding: 10px;
+            font-size: 14px;
+            outline: none;
+        } 
+        #send{
+            background-color: #4a90e2;
+            width: 60px;
+            height: 82.67px;
+            border: none;
+            color: #fff;
+            border-radius: 3px;
+            margin-left: 10px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // 버튼변수
+            const send = $('#send');
+            
+            //버튼 클릭시 텍스트박스 안에 내용을 변수에 담아 출력한다.
+            send.click(function(){
+                let talk = $('textarea').val();
+                $('.chat_box').append('<div class = "bubble02">'+talk+'</div>');
+                $('textarea').val('');
+            });
+        });
+    </script>    
+</head>
+<body>
+    <h2>제이쿼리 문서객체조작_채팅앱 구현하기</h2>
+    <ul>
+        <li>속성메서드 = val()</li>
+        <li>속성메서드 = attr()</li>
+        <li>클래스조작 메서드 : addClass</li>
+    </ul>
+
+    <div id="wrap">
+        <!-- 버튼 3개, 캐릭터 사진과 이름 -->
+        <header>
+        <input type="button" class="btn" id="close">
+        <input type="button" class="btn" id="min">
+        <input type="button" class="btn" id="max">
+        <img src="img/char01.png" alt="캐릭터">
+        <span>뭐야</span>
+        </header>
+
+        <section class="chat_box">
+            <div class="bubble01">
+                ㅎㅇ
+            </div>
+            <div class="bubble01">
+                ㅎㅇ
+            </div>
+            <div class="bubble02">
+                ㅇㅇ
+            </div>
+        </section>
+
+        <footer class="text_box">
+            <textarea placeholder="대화내용"></textarea>
+            <input type="button" value="전송" id="send">
+        </footer>
+    </div>
+    
+</body>
+</html>
