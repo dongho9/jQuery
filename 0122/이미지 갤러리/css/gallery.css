@@ -1,0 +1,98 @@
+@charset "utf-8";
+
+/* gallery.css 서식 */
+
+.gallery{
+    width: 1240px;
+    margin: 0 auto;
+}
+.gallery h3{
+    text-align: center;
+}
+.g_navi{
+    height: 50px;
+    border-bottom: 3px solid #000;
+}
+.g_navi ul{
+    display: flex;
+    justify-content: center;
+}
+.g_navi > ul > li{
+    margin: 7px;
+}
+.g_navi > ul > li > a{
+    font-size: 15px;
+    background-color: #000;
+    color: #fff;
+    padding: 4px 14px;
+    border-radius: 40px;
+    text-transform: uppercase;
+}
+.act{
+    background-color: #cf068c !important;
+}
+
+/* 2. 이미지 목록서식 */
+.g_list{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 0px;
+}
+.g_list > li{
+    width: 25%;
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+}
+.g_list > li > a{
+
+}
+.g_list > li > a:hover img{
+    transform: scale(1.1);
+    opacity: 1;
+}
+.g_list > li > a img{
+    width: 100%;
+    height: 100%;
+    transition: 0.3s;
+    opacity: 0.8;
+}
+.caption{
+    display: block;
+    background-color: rgba(0,0,0,.7);
+    line-height: 40px;
+    color: #fff;
+    position: absolute;
+    bottom: -40px;
+    left: 0px;
+    text-indent: 10px;
+    width: 100%;
+}
+.modal{
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.7);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+.modal > .center{
+    width: 600px;
+    height: 400px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.modal img{
+    width: 100%;
+    height: 100%;
+}
+i.fas{
+    position: absolute;
+    color: #fff;
+    font-size: 34px;
+    top: -50px;
+    cursor: pointer;
+    display: inline-block;
+}

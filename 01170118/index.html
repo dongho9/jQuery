@@ -156,8 +156,74 @@
     
     <!-- 탭콘텐츠 -->
     <section class="tab_con">
+      <h2></h2>
       <article>
-
+        <h3>당신이 몰랐던 식이섬유</h3>
+        <ul class="tab_con_wrap">
+          <li>
+            <a href="#" title="식" class="act">
+              식이섬유란?
+            </a>
+            <div class="con01">
+              <h4>식이섬유란?</h4>
+              <p>사람의 소화효소로 분해되지 않는 성분, 몸 속의 과다한 양분흡수를 막아주고, 장의 리듬을 조절하며,음식물이 장 속에 머무는 시간을 단축시키는 등 현대 식생활에 꼭 필요한 물질로 제 7의 영양소로 주목 받고 있음</p>
+              <span>※ 출처 : 파워푸드 슈퍼푸드 사전</span>
+            </div>
+          </li>
+          <li>
+            <a href="#" title="식기">
+              식이섬유 기능
+            </a>
+            <div class="con02">
+              <h4>식이섬유의 기능</h4>
+              <p>1. 배설활동 촉진, 변비 예방</p>
+              <p>2. 대사질환에 효과적</p>
+              <p>3. 콜레스테롤 감소</p>
+            </div>
+          </li>
+          <li class="con03t">
+            <a href="#" title="식섭">
+              식이섬유를 섭취하려면?
+            </a>
+            <div class="con03">
+              <h4>식이섬유를 섭취하려면?</h4>
+              <img src="images/tab_con02.png" alt="">
+              <ul class="con03_li">
+                <li>딸기 6개</li>
+                <li>바나나 1개</li>
+                <li>토마도 2개</li>
+                <li>미에로 100mL</li>
+              </ul>
+              <img src="images/tab_con03.png" alt="">
+              <ul class="con03_li">
+                <li>딸기 13개</li>
+                <li>바나나 2개</li>
+                <li>토마도 4개</li>
+                <li>미에로 210mL</li>
+              </ul>
+              <img src="images/tab_con04.png" alt="">
+              <ul class="con03_li">
+                <li>딸기 20개</li>
+                <li>바나나 4개</li>
+                <li>오렌지 6개</li>
+                <li>미에로 350mL</li>
+              </ul>
+              <img src="images/tab_con05.png" alt="">
+              <ul class="con03_li la">
+                <li>딸기 72개</li>
+                <li>바나나 12개</li>
+                <li>토마도 24개</li>
+                <li>미에로 1.2L</li>
+              </ul>
+              <span>
+                ※ 딸기 21g/개, 바나나 100g/개, 토마토 175g/개 기준
+              </span>
+              <span>
+                ※ 출처 : 식품교환표(대한영양사협회 2010년판), 한국인영양섭취기준(한국영양학회 2010년 개정판)
+              </span>
+            </div>
+          </li>
+        </ul>
       </article>
     </section>
 
@@ -338,6 +404,14 @@
       const e_left = $('.event i.fa-angle-left'); //이벤트 좌버튼
       const e_right = $('.event i.fa-angle-right'); //이벤트 우버튼
 
+      // const t = $(this).parent().index();
+      // console.log(t);
+      // if(t==2){
+      //   $('.tab_con article').height(800);
+      // }else{
+      //   $('.tab_Con article').height(500);
+      // }
+
       let i = $('.visual .ctrl_btn li').index(); //0값
 
       gnb.click(function(){
@@ -499,6 +573,22 @@
       $('.event i.fas').mouseleave(function(){
         Timer2 = setInterval(moveLeft, 3000);
       })
+
+      $('.tab_con_wrap > li > a').click(function(){
+        $(this).next().show().parent().siblings().find('div').hide();
+        $(this).addClass('act').parent().siblings().find('a').removeClass('act');
+        return false;
+      })
+      $('.tab_con_wrap > li:last-child > a').click(function(){
+        $('.tab_con').addClass('act2');
+      })
+      $('.tab_con_wrap > li:first-child > a').click(function(){
+        $('.tab_con').removeClass('act2');
+      })
+      $('.tab_con_wrap > li:nth-child(2) > a').click(function(){
+        $('.tab_con').removeClass('act2');
+      })
+
           });
   </script>
 </body>
