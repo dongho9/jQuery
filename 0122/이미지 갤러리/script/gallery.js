@@ -48,18 +48,62 @@ $(document).ready(function(){
     // 3. 이미지 목록 a요소 클릭시 href값 변수에 담아 modal윈도 띄우기
     g_list.click(function(){
         let img_src = $(this).attr('href');
+        // let title = $(this).attr('title');
+        let title = $(this).find('span').text();
+        let i = $(this).parent().index()+1;
+        console.log(i);
+        console.log(img_src);
+        console.log(title);
+        
         let modal = `
         <div class = "modal">
-        <div class = "center">
-            <img src = ${img_src} alt = "이미지">
-            <i class = "fas fa-close"></i>
+            <div class = "center">
+                <h3>${title}</h3>
+                <img src = ${img_src} alt = "이미지">
+                <i class = "fas fa-close"></i>
+                <i class = "fas fa-angle-left"></i>
+                <i class = "fas fa-angle-right"></i>
+                <span class="p_num"> ${i}/12 </span>
             </div>
-            </div>`
+        </div>`
+        
             //백틱문자를 사용하면 변수를 가져올 수 있다.
             // body태그의 맨뒤에 백틱문자로 선언한 modal 변수값 출력하기
-            $('body').append(modal);
+
+        $('body').append(modal);
+        $('.modal i.fa-angle-left').click(function(){
+            if(i == 1){
+                i = 12;
+            }else{
+                i--;
+            }
+            dataChange(i);
+        });
+        
+        $('.modal i.fa-angle-right').click(function(){
+            if(i == 12){
+                i = 1;
+            }else{
+                i++;
+            }
+            dataChange(i);
+        });
+        
+        function dataChange(i){
+            $('.p_num').text(i+'/12');
+            // 인덱스번호에 맞는 제목 변경되어야
+           $('.modal h3').text($('.g_list li').eq(i-1).find('.caption').text());
+
             
-        $('.center i.fas').click(function(){
+            if(i==4 || i==9 || i==11){
+                $('.modal img').attr('src','./images/img'+i+'.png');
+            }else{
+                $('.modal img').attr('src','./images/img'+i+'.jpg'); 
+            }      
+        }
+                // 좌, 우버튼 클릭시 받아온 i값을 가지고 
+        // 제목, 이미지, 페이지 번호 변경하기
+        $('.center i.fa-close').click(function(){
             $('.modal').fadeOut();
         });
 

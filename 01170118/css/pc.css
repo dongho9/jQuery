@@ -358,8 +358,8 @@
     padding: 20px;
     grid-gap: 20px;
     grid-template-areas:
-      "g01 g03 g04"
-      "g02 g03 g05"
+      "g01 g04 g03"
+      "g02 g04 g05"
       "g06 g07 g08";
   }
 
@@ -411,7 +411,7 @@
   }
 
   .girl figure:nth-child(2) {
-    grid-area: g02;
+    grid-area: g04;
   }
 
   .girl figure:nth-child(3) {
@@ -419,7 +419,7 @@
   }
 
   .girl figure:nth-child(4) {
-    grid-area: g04;
+    grid-area: g02;
   }
 
   .girl figure:nth-child(5) {
@@ -438,4 +438,56 @@
     grid-area: g08;
   }
 
+  .modal{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0 ,.7);
+    left: 0;
+    top: 0;
+    z-index: 1000;
+  }
+  .center{
+    width: 600px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .center img{
+    width: 100%;
+  }
+  .modal i.fa-close{
+    right: 0;
+    top: -40px;
+  }
+  .modal i.fas{
+    color: #fff;
+    font-size: 34px;
+    position: absolute;
+    cursor: pointer;
+  }
+  .modal i.fa-angle-left{
+    position: absolute;
+    left: -30px;
+    top: 50%;
+  }
+  .modal i.fa-angle-right{
+    position: absolute;
+    right: -30px;
+    top: 50%;
+  }
+  .modal h3{
+    color: #fff;
+    position: absolute;
+    top: -40px;
+    font-size: 24px;
+  }
+  .modal .p_num{
+    color: #fff;
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    padding-top: 10px;
+  }
 }

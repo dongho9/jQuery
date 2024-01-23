@@ -76,23 +76,44 @@
     height: 100%;
     position: fixed;
 }
-.modal > .center{
-    width: 600px;
-    height: 400px;
-    position: absolute;
+.center{
+    width: 700px;
+    position: relative;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
 }
-.modal img{
-    width: 100%;
-    height: 100%;
+.modal h3{
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
 }
-i.fas{
+.center img{
+    width: 100%;
+}
+.center i.fa-close{
+    right: 0;
     position: absolute;
+    top: 10px;
+}
+.center .p_num{
+    color: #fff;
+    text-align: center;
+    display: block;
+    font-size: 24px;
+}
+.center i.fa-angle-left{
+    position: absolute;
+    left: -40px;
+    top: 50%;
+}
+.center i.fa-angle-right{
+    position: absolute;
+    right: -40px;
+    top: 50%;
+}
+.center i.fas{
     color: #fff;
     font-size: 34px;
-    top: -50px;
     cursor: pointer;
-    display: inline-block;
 }
