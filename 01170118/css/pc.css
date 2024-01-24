@@ -2,8 +2,9 @@
 
 /* pc해상도일때 적용되는 서식 */
 
-@media screen and (min-width:1200px) {
-
+  html{
+    scroll-behavior: smooth;
+  }
   header{
     width:100%;height:150px;
     position:absolute;
@@ -75,7 +76,7 @@
   main{}
   .visual{
     position:relative;
-    height:73vh;/* veiwport height */
+    height:750px;/* veiwport height */
     overflow:hidden;
   }
   .visual > h2{display:none;}
@@ -93,7 +94,7 @@
     position:absolute;
     top:280px;left:3%;
   }
-  .visual > div > img{width:100%; height: 100%;}
+  .visual > div > img{width:100%;}
   .slide1{z-index:3;}
   .slide2{z-index:2;display:none;}
   .slide3{z-index:1;display:none;}
@@ -149,6 +150,63 @@
   .on{
     background:#ca6c01 !important;
   }
+  .news_con{
+    width: 1200px;
+    display: flex;
+    margin: 60px auto;
+  }
+  .news_con article{
+    height: 500px;
+    margin-right: 20px;
+  }
+  .news_con article > h3{
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  .news_con article > h3 > span{
+    display: block;
+  }
+  .news_con article > h3 > img{
+      width: 280px;
+    }
+  .news_con iframe{
+    width: 100%;
+    height: 315px;
+  }
+  .youtube{
+    width: 60%;
+  }
+  .news_list{
+    width: 40%;
+  }
+  .news_list > h3 > span:last-child{
+    font-size: 44px !important; 
+    padding-top: 5px;
+  }
+  .news_list i.fa-circle{
+    color: #ff9d00;
+    padding-right: 6px;
+    font-size: 16px;
+  }
+  .news_list ul{
+    width: 300px;
+  }
+  .news_list li{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    line-height: 250%;
+  }
+  .news_list li > a{
+    font-size: 16px;
+    font-weight: bold;
+    color: #777777;
+  }
+  .news_list ul > li:hover a{
+    /* text-decoration: none; */
+  }
+
 
   .tab_con{
     width: 100%;
@@ -267,6 +325,45 @@
     margin-left: 1% !important;
   }
 
+  .best_product{
+    padding: 60px 0px;
+    width: 100%;
+    background-color: #ffc845;'
+  }
+  .best_product article{
+    width: 1200px;
+    margin: 0 auto;
+  }
+  .best_product article > h3{
+    font-size: 45px;
+    padding-bottom: 40px;
+  }
+  .best_product article ul{
+    display: flex;
+  }
+  .best_product article ul li{
+    width: 25%;
+    padding: 0px 10px;
+    box-sizing: border-box;
+  }
+  .best_product article ul li img{
+    width: 100%;
+  }
+  .best_product article ul li h4{
+    border-bottom: 1px solid rgb(241, 176, 23);
+    font-size: 24px;
+    height: 70px;
+    padding-top: 10px;
+  }
+  .best_product article ul li p{
+    padding-top: 10px;
+    font-size: 15px;
+    line-height: 25px;
+    color: #805a28;
+    
+  }
+
+
   /* 이벤트 콘텐츠 */
   .event{
     width: 1200px;
@@ -293,6 +390,9 @@
   }
   .es_wrap > div > a{
     display: flex;
+  }
+  .es_wrap > div > a:hover{
+    text-decoration: none;
   }
   .es_wrap > div > a > img{
     padding: 4px;
@@ -490,4 +590,90 @@
     font-size: 18px;
     padding-top: 10px;
   }
-}
+
+  /* 푸터서식 */
+  footer{
+    width: 100%;
+    background-color: #202020;
+    color: #fff;
+  }
+  .f_inner{
+    background-color: #2f2f2f;
+  }
+  .f_inner nav{
+    display: flex;
+    justify-content: space-between;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 50px 0px;
+  }
+  footer dl{
+    line-height: 30px;
+  }
+  footer dl dt a{
+    font-size: 15px;
+    font-weight: bold;
+    color: #f36f21;
+    transition: 0.5s;
+  }
+  footer dl dd a{
+    color: #ccc;
+    font-size: 14px;
+    transition: 0.5s;
+  }
+  footer dl dt:hover a{
+    color: #23527c;
+    text-decoration: none;
+  }
+  footer dl dd:hover a{
+    color: #f36f21;
+    text-decoration: none;
+  }
+  .sns dt{
+    font-size: 18px;
+  }
+  .sns dd i{
+    margin-top: 16px;
+    font-size: 14px;
+    margin-right: 20px;
+    border: 1px solid #ccc;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.5s;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+  }
+  .sns dd i:last-child{
+    margin-right: 0px;
+  }
+  .sns dd i:hover{
+    color: #f36f21;
+    border: 1px solid #f36f21;
+  }
+  address{
+    display: flex;
+    justify-content:space-between;
+    height: 70px;
+  }
+  address h2{
+    width: 130px;
+    padding: 23px 0px 0px 10%;
+  }
+  address img{
+    width: 100%;
+  }
+  address p{
+    padding-right: 3%;
+    line-height: 70px;
+    color: #777777;
+  }
+  .t_btn{
+    position: fixed;
+    bottom: 2%;
+    right: 1%;
+    display: none;
+    transition: 0.5s;
+  }
+
